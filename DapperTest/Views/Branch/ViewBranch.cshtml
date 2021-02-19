@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DapperTest.Models.Domain.dBranch>
+
+@{
+    ViewBag.Title = "ViewBranch";
+}
+
+<h2>ViewBranch</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateBranch")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.intID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vchBranchName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vchBranchDesc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.intID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vchBranchName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vchBranchDesc)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Edit", "EditBranch", new { id = item.intID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.intID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.intID })
+        </td>
+    </tr>
+}
+
+</table>
